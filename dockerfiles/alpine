@@ -5,5 +5,6 @@ WORKDIR /home/memuset
 RUN \
     addgroup -S memuset -g 1000 && \
     adduser -u 1000 -g "memuset" -h /home/memuset -s /bin/ash -D -S memuset -G memuset
+RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.profile
 USER memuset
 CMD [ "/bin/ash" ]
