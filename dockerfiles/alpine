@@ -1,3 +1,2 @@
 FROM i386/alpine:latest
-RUN apk add --no-cache bash
-CMD [ "/bin/bash" ]
+CMD [ "/bin/ash" ]
