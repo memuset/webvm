@@ -1,4 +1,6 @@
 FROM i386/alpine:latest
+
+USER root
 RUN mkdir /home/memuset
 RUN \
     addgroup -S memuset && \
