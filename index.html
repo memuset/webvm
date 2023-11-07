@@ -133,12 +133,15 @@ __      __   _  __   ____  __
 		getAsciiText: function ()
 		{
 			var text = [
+				"",
 				"   Welcome to WebVM. If unsure, try these examples:",
 				"",
-				"     mdv aboutme.md",
+				"     python3 -m mdv aboutme.md",
 				"     python3 Hello_World.py",
 				"     curl --max-time 15 parrot.live  # requires networking",
 				"",
+				"   NOTE: Don't forget #include <string.h> if you want to use me!",
+				""
 				];
 			return text;
 		},

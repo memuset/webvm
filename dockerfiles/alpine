@@ -13,5 +13,6 @@ USER 1000:1000
 RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/Hello_World.py
 RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/aboutme.md
 RUN pip3 install mdv
+RUN echo "export PATH=$PATH:/home/memuset/.local/bin/" >> "$ENV"
 
 CMD [ "/bin/ash" ]
