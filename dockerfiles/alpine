@@ -2,13 +2,14 @@ FROM i386/alpine:latest
 
 RUN mkdir /home/memuset
 WORKDIR /home/memuset
-RUN apk add --no-cache python3 py3-pip vim
-
+RUN apk add --no-cache python3 py3-pip vim curl
 RUN addgroup -S memuset -g 1000 && \
     adduser -u 1000 -g "memuset" -h /home/memuset -s /bin/ash -D -S memuset -G memuset
 RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.profile
 ENV ENV="/etc/profile"
 RUN cat .profile >> "$ENV"
-USER memuset
+USER 1000:1000
+
+RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/Hello_World.py
 
 CMD [ "/bin/ash" ]
