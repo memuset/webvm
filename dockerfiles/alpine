@@ -1,9 +1,8 @@
 FROM i386/alpine:latest
 
-USER root
 RUN mkdir /home/memuset
 RUN \
-    addgroup -S memuset && \
-    adduser -g "memuset" -h /home/memuset -s /bin/ash -D -S memuset -G memuset
+    addgroup -S memuset -g 1000 && \
+    adduser -u 1000 -g "memuset" -h /home/memuset -s /bin/ash -D -S memuset -G memuset
 USER memuset
 CMD [ "/bin/ash" ]
