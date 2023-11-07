@@ -9,4 +9,5 @@ RUN \
 #RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.bashrc
 RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.profile
 USER memuset
+ENV ENV="/memuset/.profile"
 CMD [ "/bin/ash" ]
