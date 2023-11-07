@@ -2,11 +2,11 @@ FROM i386/alpine:latest
 
 RUN mkdir /home/memuset
 WORKDIR /home/memuset
-RUN apk add bash
+#RUN apk add bash
 RUN \
     addgroup -S memuset -g 1000 && \
     adduser -u 1000 -g "memuset" -h /home/memuset -s /bin/bash -D -S memuset -G memuset
-RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.bashrc
+#RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.bashrc
 RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.profile
 USER memuset
-CMD [ "/bin/bash" ]
+CMD [ "/bin/ash" ]
