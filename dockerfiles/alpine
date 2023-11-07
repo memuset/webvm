@@ -8,12 +8,10 @@ RUN addgroup -S memuset -g 1000 && \
 RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.profile
 ENV ENV="/etc/profile"
 RUN cat .profile >> "$ENV"
-USER 1000:1000
 
 RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/Hello_World.py
 RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/aboutme.md
 RUN pip3 install mdv
-USER root
 RUN echo "export PATH=$PATH:/home/memuset/.local/bin/" >> "$ENV"
 USER 1000:1000
 
