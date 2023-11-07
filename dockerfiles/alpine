@@ -10,4 +10,5 @@ RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.profile
 ENV ENV="/etc/profile"
 RUN cat .profile >> "$ENV"
 USER memuset
+
 CMD [ "/bin/ash" ]
