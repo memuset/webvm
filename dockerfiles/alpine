@@ -6,7 +6,6 @@ RUN apk add --no-cache bash gcc libc-dev python3 py3-pip vim
 RUN \
     addgroup -S memuset -g 1000 && \
     adduser -u 1000 -g "memuset" -h /home/memuset -s /bin/ash -D -S memuset -G memuset
-#RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.bashrc
 RUN wget https://raw.githubusercontent.com/memuset/vmfiles/main/.profile
 ENV ENV="/etc/profile"
 RUN cat .profile >> "$ENV"
